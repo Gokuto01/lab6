@@ -1,1 +1,30 @@
-
+pipeline {
+   agent any
+    stages {
+         stage('phase-0') {
+            steps {
+                sh 'echo Phase 0 Pass'
+            }
+        }
+        stage('phase-1') {
+            steps {
+                sh 'echo Phase 1 Pass'
+            }
+        }
+        stage('phase-2') {
+            steps {
+                sh 'echo Phase 2 Pass'
+            }
+        }
+        stage('phase-3') {
+            steps {
+                sh 'echo Phase 3 Pass'
+            }
+        }
+    }
+     post {
+        always {
+            sh 'python3  main.py'
+        }
+    }
+}
